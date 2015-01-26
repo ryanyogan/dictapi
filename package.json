@@ -1,0 +1,23 @@
+{
+  "name": "dictapi",
+  "version": "0.0.1",
+  "description": "A small little Koa app to play around",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanyogan/dictapi.git"
+  },
+  "author": "Ryan Yogan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanyogan/dictapi/issues"
+  },
+  "homepage": "https://github.com/ryanyogan/dictapi",
+  "dependencies": {
+    "koa-mount": "^1.3.0",
+    "koa-router": "^3.8.0"
+  }
+}
