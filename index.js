@@ -9,6 +9,17 @@ var APIv1 = new router();
 APIv1.get('/all', api.all)
 APIv1.get('/single', api.single);
 
+app.use(function *(next) {
+  try {
+    yield next;
+  } catch (err) {
+    this.type = 'json';
+    this.status = err.status || 500;
+    this.body = { 'error': 'The application just blew up...' };
+    this.app.emit('error', err, this);
+  }
+});
+
 app.use(mount('/v1', APIv1.middleware()));
 
 if (!module.parent) app.listen(3000);
